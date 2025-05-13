@@ -45,9 +45,12 @@ export const Login = () => {
         const data = await res.json();
         if (!res.ok) throw new Error(data.message || "Error en login");
 
-        // Si todo sale bien, podrías redirigir:
-        window.location.href = "/aula-virtual"; // O usar React Router
-        console.log("Login exitoso", data);
+        console.log("Respuesta del servidor:", data);
+
+        if (data.status === "success") {
+          console.log("Login exitoso");
+          window.location.href = "/aula-virtual"; // O usa navigate('/aula-virtual') si usas React Router
+        }
       })
       .catch((err) => {
         setFormError(err.message || "Error al iniciar sesión.");

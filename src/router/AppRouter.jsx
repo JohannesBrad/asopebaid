@@ -19,7 +19,8 @@ import { Login } from "../pages/login/Login";
 import { PageNotFound } from "../pages/PageNotFound";
 import MisionVision from "../pages/MisionVision";
 import { Objetivos } from "../pages/Objetivos";
-import AulaVirtual from "../pages/login/AulaVirtual";
+import AulaVirtualLayout from "../layouts/AulaVirtualLayout";
+import AulaVirtualHome from "../pages/aulaVirtual/AulaVirtualHome";
 
 export const AppRouter = () => {
   return (
@@ -54,8 +55,13 @@ export const AppRouter = () => {
           <Route path="*" element={<PageNotFound />} />
         </Route>
         {/* <Route path="*" element={<h1>404 Not Found</h1>} /> */}
+
         <Route path="/login" element={<Login />} />
-        <Route path="/aula-virtual" element={<AulaVirtual />} />
+        {/* <Route path="/login-registro" element={<LoginRegister />} /> */}
+
+        <Route path="/aula-virtual" element={<AulaVirtualLayout />}>
+          <Route path="/aula-virtual" element={<AulaVirtualHome />} />
+        </Route>
       </Routes>
     </>
   );
