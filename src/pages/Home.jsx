@@ -3,6 +3,7 @@ import imgHeroHome from "../assets/img_bg_2.png"; // Importa la imagen desde el 
 import logoAsopebaid from "../assets/logo-asopebaid4.png";
 import imgMisionVision from "../assets/mision-vision.png"; // Importa la imagen desde el archivo contHeroHome.js
 import imgObjetivos from "../assets/objetivos.png"; // Importa la imagen desde el archivo contHeroHome.js
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
@@ -43,9 +44,11 @@ export const Home = () => {
                 className="rounded-xl w-[80%] object-cover mb-4 "
               />
               <div className="border-b ">
-                <h3 className="font-light text-xl title-marcobremob pb-2">
-                  MISIÓN Y VISIÓN
-                </h3>
+                <Link to="/mision-vision">
+                  <h3 className="font-light text-xl title-marcobremob pb-2">
+                    MISIÓN Y VISIÓN
+                  </h3>
+                </Link>
               </div>
             </article>
 
@@ -56,9 +59,11 @@ export const Home = () => {
                 className="rounded-xl w-[80%] object-cover mb-4 "
               />
               <div className="border-b ">
-                <h3 className="font-light text-xl title-marcobremob pb-2">
-                  OBJETIVOS
-                </h3>
+                <Link to="/objetivos">
+                  <h3 className="font-light text-xl title-marcobremob pb-2">
+                    OBJETIVOS
+                  </h3>
+                </Link>
               </div>
             </article>
           </div>
@@ -79,7 +84,7 @@ export const Home = () => {
               title="Marcobre"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               //referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+
               className="w-full aspect-video"
             ></iframe>
           </div>

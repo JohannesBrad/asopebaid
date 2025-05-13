@@ -16,6 +16,10 @@ import { Enlaces } from "../pages/Enlaces";
 import { Noticias } from "../pages/Noticias";
 import { Articulos } from "../pages/Articulos";
 import { Login } from "../pages/login/Login";
+import { PageNotFound } from "../pages/PageNotFound";
+import MisionVision from "../pages/MisionVision";
+import { Objetivos } from "../pages/Objetivos";
+import AulaVirtual from "../pages/login/AulaVirtual";
 
 export const AppRouter = () => {
   return (
@@ -23,6 +27,8 @@ export const AppRouter = () => {
       <Routes>
         <Route path="/" element={<MainLayouts />}>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/mision-vision" element={<MisionVision />}></Route>
+          <Route path="/objetivos" element={<Objetivos />}></Route>
           <Route path="/nosotros" element={<Nosotros />}></Route>
           <Route path="/directiva" element={<Directiva />}></Route>
           <Route path="/miembros" element={<Miembros />}></Route>
@@ -39,16 +45,17 @@ export const AppRouter = () => {
             path="/eventos-asopebaid"
             element={<EventosAsopebaid />}
           ></Route>
-
           <Route path="/biblioteca" element={<Biblioteca />}></Route>
-          <Route path="/enlaces" element={<Enlaces />}></Route>
+          <Route path="/enlaces" element={<Enlaces />}></Route>s
           <Route path="/noticias" element={<Noticias />}></Route>
           <Route path="/articulos" element={<Articulos />}></Route>
-          <Route path="/unete-a-nosotros" element={<Unete />}></Route>
+          {/* <Route path="/unete-a-nosotros" element={<Unete />}></Route> */}
           <Route path="/contacto" element={<Contacto />}></Route>
+          <Route path="*" element={<PageNotFound />} />
         </Route>
         {/* <Route path="*" element={<h1>404 Not Found</h1>} /> */}
         <Route path="/login" element={<Login />} />
+        <Route path="/aula-virtual" element={<AulaVirtual />} />
       </Routes>
     </>
   );

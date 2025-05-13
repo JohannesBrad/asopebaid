@@ -33,7 +33,7 @@ const links = [
   {
     name: "Únete a Nosotros",
     submenu: [
-      { name: "Sé un miembro", path: "/unete#miembro" },
+      { name: "Sé un miembro", path: "/login" },
       { name: "Donaciones", path: "/unete#donaciones" },
     ],
   },
