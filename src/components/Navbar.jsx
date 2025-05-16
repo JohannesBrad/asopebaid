@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FiChevronDown, FiMail } from "react-icons/fi";
 //import logoAsopebaid from "../assets/logoAsopebaid.svg"; // ajusta el path según tu proyecto
 import logoAsopebaid from "../assets/logo-asopebaid4.png";
+import { FaRegUser } from "react-icons/fa6";
 
 const links = [
   { name: "Principal", path: "/" },
@@ -33,7 +34,7 @@ const links = [
   {
     name: "Únete a Nosotros",
     submenu: [
-      { name: "Sé un miembro", path: "/login" },
+      { name: "Sé un miembro", path: "/unete-a-nosotros" },
       { name: "Donaciones", path: "/unete#donaciones" },
     ],
   },
@@ -102,6 +103,15 @@ export const Navbar = () => {
               </div>
             ))}
           </nav>
+          <div>
+            <Link
+              to="/login"
+              className="hidden md:flex items-center bg-[#1d4999] text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300"
+            >
+              <FaRegUser />
+              <span className="ml-2">Iniciar sesión</span>
+            </Link>
+          </div>
 
           {/* Mobile hamburger */}
           <div className="md:hidden">
@@ -167,6 +177,15 @@ export const Navbar = () => {
                 )}
               </div>
             ))}
+            <div className="px-4 pt-2">
+              <Link
+                to="/login"
+                className="flex items-center justify-center gap-2 w-full bg-[#1d4999] text-white font-medium text-sm py-3 rounded-lg shadow-sm hover:bg-[#153a7a] transition-all duration-300"
+              >
+                <FaRegUser className="text-base" />
+                Iniciar sesión
+              </Link>
+            </div>
           </div>
         )}
       </div>

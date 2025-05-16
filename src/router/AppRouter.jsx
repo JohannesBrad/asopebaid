@@ -21,6 +21,8 @@ import MisionVision from "../pages/MisionVision";
 import { Objetivos } from "../pages/Objetivos";
 import AulaVirtualLayout from "../layouts/AulaVirtualLayout";
 import AulaVirtualHome from "../pages/aulaVirtual/AulaVirtualHome";
+import Register from "../pages/login/Register";
+import ProtectedRouter from "../router/ProtectedRouter";
 
 export const AppRouter = () => {
   return (
@@ -50,17 +52,28 @@ export const AppRouter = () => {
           <Route path="/enlaces" element={<Enlaces />}></Route>s
           <Route path="/noticias" element={<Noticias />}></Route>
           <Route path="/articulos" element={<Articulos />}></Route>
-          {/* <Route path="/unete-a-nosotros" element={<Unete />}></Route> */}
+          <Route path="/unete-a-nosotros" element={<Unete />}></Route>
           <Route path="/contacto" element={<Contacto />}></Route>
           <Route path="*" element={<PageNotFound />} />
         </Route>
         {/* <Route path="*" element={<h1>404 Not Found</h1>} /> */}
 
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/login-registro" element={<LoginRegister />} /> */}
+        <Route path="/registro" element={<Register />} />
 
-        <Route path="/aula-virtual" element={<AulaVirtualLayout />}>
+        {/*  <Route path="/aula-virtual" element={<AulaVirtualLayout />}>
           <Route path="/aula-virtual" element={<AulaVirtualHome />} />
+        </Route> */}
+
+        <Route
+          path="/aula-virtual"
+          element={
+            <ProtectedRouter>
+              <AulaVirtualLayout />
+            </ProtectedRouter>
+          }
+        >
+          <Route index element={<AulaVirtualHome />} />
         </Route>
       </Routes>
     </>

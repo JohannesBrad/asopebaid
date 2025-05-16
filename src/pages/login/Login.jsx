@@ -1,27 +1,36 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logoAsopebaid from "../../assets/logo-asopebaid4.png";
+import { FiHome } from "react-icons/fi";
+
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
-  const [email, setEmail] = useState("");
+  const [correo, setCorreo] = useState("");
+  const [correoError, setCorreoError] = useState("");
   const [password, setPassword] = useState("");
-  const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [formError, setFormError] = useState("");
+
+  const { setUser } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Evita recarga del navegador
     let isValid = true;
 
-    // Validación simple
-    setEmailError("");
+    setCorreoError("");
     setPasswordError("");
     setFormError("");
 
-    if (!email) {
-      setEmailError("El correo es obligatorio.");
+    if (!correo) {
+      setCorreoError("El correo es obligatorio.");
       isValid = false;
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      setEmailError("Correo inválido.");
+    } else if (!/\S+@\S+\.\S+/.test(correo)) {
+      setCorreoError("Correo inválido.");
       isValid = false;
     }
 
@@ -36,7 +45,8 @@ export const Login = () => {
     /*     fetch("https://tusitio.com/backend/login.php", { */
     fetch("https://asopebaid.org.pe/api/login.php", {
       method: "POST",
-      body: JSON.stringify({ email, password }),
+      //body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ correo, password }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -48,8 +58,12 @@ export const Login = () => {
         console.log("Respuesta del servidor:", data);
 
         if (data.status === "success") {
-          console.log("Login exitoso");
-          window.location.href = "/aula-virtual"; // O usa navigate('/aula-virtual') si usas React Router
+          const usuario = data.usuario;
+          localStorage.setItem("authUser", JSON.stringify(usuario));
+          setUser(usuario);
+          navigate("/aula-virtual");
+        } else {
+          setFormError("Error al iniciar sesión.");
         }
       })
       .catch((err) => {
@@ -75,10 +89,13 @@ export const Login = () => {
               type="email"
               className="bg-zinc-100 text-sm border-blue-200 rounded-md p-2"
               placeholder="Correo electrónico"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={correo}
+              onChange={(e) => setCorreo(e.target.value)}
+              required
             />
-            {emailError && <p className="text-red-500 text-xs">{emailError}</p>}
+            {correoError && (
+              <p className="text-red-500 text-xs">{correoError}</p>
+            )}
           </div>
 
           <div className="flex flex-col gap-2 mb-5">
@@ -105,6 +122,23 @@ export const Login = () => {
             {formError && (
               <p className="text-red-500 text-xs text-center">{formError}</p>
             )}
+          </div>
+
+          <div className="text-center gap-2 flex justify-center items-center text-sm">
+            <span className="">¿No tienes cuenta?</span>
+            <Link
+              /* preventDefault */
+              to="/registro"
+              className="text-blue-600 hover:text-blue-700"
+            >
+              Regístrate
+            </Link>
+          </div>
+          <div className="text-center gap-2 flex justify-center items-center text-sm pt-3">
+            <FiHome className="block" />
+            <Link to="/" className="">
+              Volver a la página principal
+            </Link>
           </div>
         </form>
       </div>

@@ -25,14 +25,41 @@ export const Home = () => {
           <img
             src={logoAsopebaid}
             alt="Asopebaid"
-            className="w-[50%] mx-auto mb-4"
+            className="w-[40%] mx-auto mb-4"
           ></img>
         </div>
       </section>
 
+      <section className="max-w-5xl mx-auto px-4 py-8 text-center text-gray-700 leading-relaxed">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#1d4999] mb-6">
+          ¿QUIÉNES SOMOS?
+        </h2>
+
+        <div className="text-lg">
+          <p className="mb-4">
+            La Asociación para el Empleo y Bienestar Animal en Investigación y
+            Docencia - ASOPEBAID PERÚ, es una asociación sin fines de lucro, que
+            promueve el uso adecuado y bienestar de los animales de laboratorio,
+            utilizados con fines de investigación científica y docencia.
+          </p>
+          <p className="mb-4">
+            Promovemos el fortalecimiento de los recursos humanos de
+            instituciones dedicadas a la ciencia de animales de laboratorio,
+            investigadores y usuarios de animales de experimentación en ética y
+            bienestar animal, principios de las 3R’s, aplicación de métodos
+            alternativos, el rol del técnico en bioterio, entre otros temas
+            esenciales para un desempeño óptimo.
+          </p>
+          <p className="font-medium">
+            ASOPEBAID es miembro de la Federación de Sociedades Sudamericanas de
+            Ciencia de Animales de Laboratorio – <strong>FESSACAL</strong>.
+          </p>
+        </div>
+      </section>
+
       {/* Section - Mision, Vision  */}
-      <section className="py-8 md:py-12 text-center">
-        <h2 className="text-2xl font-medium py-6 md:text-3xl md:font-medium leading-5">
+      <section className="py-8 md:py-8 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#1d4999] mb-6">
           CONÓCENOS
         </h2>
         <div className="max-w-screen-xl mx-auto px-8 py-4 md:py-12">
@@ -71,7 +98,7 @@ export const Home = () => {
       </section>
       {/* Section - Video */}
       <section className="py-8 md:py-12 text-center bg-zinc-100">
-        <h2 className="text-2xl font-medium py-6 md:text-3xl md:font-medium leading-5">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#1d4999] mb-6">
           MULTIMEDIA
         </h2>
         <article className="flex flex-col my-4 items-center px-0 md:py-6 rounded-xl top-2">

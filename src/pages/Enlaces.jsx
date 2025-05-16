@@ -55,7 +55,7 @@ export const Enlaces = () => {
   return (
     <>
       <section className="py-8 md:pt-[12rem] text-center">
-        <h2 className="text-2xl font-medium py-6 md:text-3xl md:font-medium leading-5">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#1d4999] mb-6">
           Enlaces
         </h2>
         <div className="max-w-screen-xl mx-auto px-8 pb-20 pt-6 ">
