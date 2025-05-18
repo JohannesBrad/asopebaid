@@ -49,18 +49,33 @@ export const Navbar = () => {
   const toggleSubmenu = (index) =>
     setActiveIndex(activeIndex === index ? null : index);
 
+  const handleMobileLinkClick = (path) => {
+    if (path && path !== "#") {
+      // Solo cerrar si es un enlace real
+      setOpenMobile(false);
+      setActiveIndex(null);
+    }
+  };
+
   return (
     <div className="bg-white w-full shadow-md fixed z-10 transition duration-700 ease-out">
       <div className="w-full bg-[#1d4999]">
-        <div className="max-w-7xl mx-auto py-2 justify-end flex">
-          <span className="text-gray-300 font-light text-sm text-left ">
+        <div className="max-w-7xl mx-auto py-2 justify-end flex px-4 md:px-0">
+          {/*     <span className="text-gray-300 font-light text-sm text-left ">
             asopebaid.peru@gmail.com | <FiMail className="inline" />{" "}
-          </span>
+          </span> */}
+          <a
+            href="mailto:asopebaid.peru@gmail.com"
+            className="text-gray-300 font-light text-sm"
+          >
+            asopebaid.peru@gmail.com | <FiMail className="inline" />
+          </a>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center py-5">
+        {/* <div className="flex justify-between items-center py-5"> */}
+        <div className="flex items-center justify-between py-3 px-4 md:px-0">
           <div>
             <NavLink to="/" className="flex items-center">
               <img
@@ -78,6 +93,7 @@ export const Navbar = () => {
                 <Link
                   to={link.path || "#"}
                   className="text-blue-900 hover:text-blue-600 transition duration-300 uppercase text-sm flex items-center gap-1"
+                  onClick={() => handleMobileLinkClick(link.path)}
                 >
                   {link.name}
                   {link.submenu && (
@@ -92,6 +108,7 @@ export const Navbar = () => {
                           <Link
                             to={sublink.path}
                             className="block px-4 py-2 hover:bg-blue-100 text-sm text-blue-900"
+                            onClick={() => handleMobileLinkClick(link.path)}
                           >
                             {sublink.name}
                           </Link>
@@ -106,6 +123,7 @@ export const Navbar = () => {
           <div>
             <Link
               to="/login"
+              onClick={() => handleMobileLinkClick(link.path)}
               className="hidden md:flex items-center bg-[#1d4999] text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300"
             >
               <FaRegUser />
@@ -140,7 +158,11 @@ export const Navbar = () => {
 
         {/* Mobile menu */}
         {openMobile && (
-          <div className="md:hidden pb-4 space-y-2">
+          <div
+            className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+              openMobile ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+            }`}
+          >
             {links.map((link, index) => (
               <div key={index}>
                 <div
@@ -162,12 +184,13 @@ export const Navbar = () => {
                   )}
                 </div>
                 {link.submenu && activeIndex === index && (
-                  <ul className="pl-6 space-y-2">
+                  <ul className="md:pl-6 md:space-y-2 overflow-hidden">
                     {link.submenu.map((sublink, i) => (
                       <li key={i}>
                         <Link
                           to={sublink.path}
-                          className="block text-blue-800 text-sm hover:underline"
+                          className="pl-6 block text-[#1d4999] text-md hover:underline bg-blue-100 py-3 border-b border-blue-200"
+                          onClick={handleMobileLinkClick}
                         >
                           {sublink.name}
                         </Link>
@@ -177,7 +200,7 @@ export const Navbar = () => {
                 )}
               </div>
             ))}
-            <div className="px-4 pt-2">
+            <div className="px-4 pt-2 mb-4">
               <Link
                 to="/login"
                 className="flex items-center justify-center gap-2 w-full bg-[#1d4999] text-white font-medium text-sm py-3 rounded-lg shadow-sm hover:bg-[#153a7a] transition-all duration-300"

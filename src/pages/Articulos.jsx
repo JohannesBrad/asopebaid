@@ -26,12 +26,12 @@ const articulos = [
 export const Articulos = () => {
   return (
     <>
-      <section className="py-8 md:pt-[12rem] text-center">
+      <section className="py-8 pt-[10rem] md:pt-[12rem] text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-[#1d4999] mb-6">
-          ARTICULOS
+          Artículos
         </h2>
         <div className="max-w-screen-xl mx-auto px-8 pb-20 pt-6 ">
-          <div className="flex flex-col justify-center gap-8 md:gap-8 md:flex-row">
+          <div className="flex flex-col justify-center gap-8 md:gap-8 md:flex-row items-center">
             {articulos.map((item, id) => {
               return (
                 <article

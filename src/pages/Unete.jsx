@@ -4,8 +4,8 @@ import imgUnete from "../assets/2150760522.jpg";
 
 export const Unete = () => {
   return (
-    <section className="py-8 md:pt-[12rem] bg-[#f9fafb] ">
-      <div className="min-h-screen bg-[#f9fafb] py-16 px-4">
+    <section className="py-8 pt-[10rem] md:pt-[12rem] bg-[#f9fafb] ">
+      <div className="min-h-screen bg-[#f9fafb] md:py-16 px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Texto */}
           <div>

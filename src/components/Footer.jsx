@@ -3,8 +3,11 @@ import React from "react";
 export const Footer = () => {
   return (
     <>
-      <div className="w-full bg-[#2c2e30] py-6">
-        <div className=" max-w-screen-xl mx-auto flex justify-between items-center px-4 py-4 md:px-8 md:py-6 text-zinc-400">
+      <div className="w-full bg-[#2c2e30] py-6 px-4">
+        <div
+          className=" max-w-screen-xl mx-auto gap-y-8 
+         flex md:flex-row flex-col justify-between items-center px-4 py-4 md:px-8 md:py-6 text-zinc-400"
+        >
           <div className="text-left md:w-1/2 w-full">
             <h3 className="font-bold text-2xl">Asopebaid</h3>
             <p className="text-sm">

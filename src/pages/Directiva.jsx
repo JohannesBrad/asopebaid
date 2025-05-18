@@ -1,46 +1,21 @@
-import React from "react";
-import directiva1 from "../assets/directiva-4.png";
-import directiva2 from "../assets/directiva-5.png";
-import directiva3 from "../assets/directiva-6.png";
-
-const directiva = [
-  {
-    id: 1,
-    imagen: directiva1,
-    nombre: "Dante Vara Marquez",
-    cargo: "Presidente",
-    descripcion: "",
-  },
-  {
-    id: 2,
-    imagen: directiva2,
-    nombre: "Evelyn Narrea Castilla",
-    cargo: "Tesorera",
-    descripcion: "",
-  },
-  {
-    id: 3,
-    imagen: directiva3,
-    nombre: "Diana Cedamanos Pacherres",
-    cargo: "Secretaria:",
-    descripcion: "",
-  },
-];
+import { useAsopebaidData } from "../hooks/useAsopebaidData";
 
 export const Directiva = () => {
+  const { data } = useAsopebaidData();
+  const directiva = data.filter((item) => item.tipo === "directiva");
   return (
     <>
-      <section className="py-8 md:pt-[12rem] text-center">
+      <section className="py-8 pt-[10rem] md:pt-[12rem] text-center bg-[#f9fafb] px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-[#1d4999] mb-6">
-          DIRECTIVA DE ASOPEBAID
+          Directiva de ASOPEBAID
         </h2>
         <div className="max-w-screen-xl mx-auto px-8 pb-20 pt-6 ">
-          <div className="flex flex-col justify-center gap-8 md:gap-8 md:flex-row">
+          <div className="flex flex-col items-center justify-center gap-8 md:gap-8 md:flex-row flex-wrap">
             {directiva.map((item, id) => {
               return (
                 <article
                   key={id}
-                  className="w-72 h-auto m-4 flex flex-col justify-between text-center py-10 rounded-xl px-4 shadow-sm bg-white"
+                  className="w-72 h-auto m-4 flex flex-col justify-between text-center py-10 rounded-xl px-4 shadow-md bg-white"
                 >
                   <div>
                     <div className="flex justify-center mb-4">
