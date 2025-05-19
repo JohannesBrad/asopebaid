@@ -14,7 +14,9 @@ export const EventosNacionales = () => {
         </h2>
 
         <div className="max-w-screen-xl mx-auto px-8 pb-20 pt-6 ">
-          <div className="flex flex-col items-center justify-center gap-8 md:gap-12 md:flex-row">
+          {/* <div className="flex flex-col items-center justify-center gap-8 md:gap-12 md:flex-row"> */}
+          {/* <div className="flex flex-col items-center justify-center gap-8 md:gap-12 md:flex-row"> */}
+          <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center">
             {eventos.map((evento) => (
               <article
                 key={evento.id}
@@ -23,9 +25,9 @@ export const EventosNacionales = () => {
                 <div className="flex justify-center mb-4">
                   <img
                     src={evento.imagen}
-                    alt={evento.nombre}
-                    loading="lazy"
-                    className=" aspect-square rounded-t-xl  h-[20rem]  w-full"
+                    alt={evento.titulo}
+                    /* loading="lazy" */
+                    className="rounded-t-xl h-[20rem] w-full object-cover"
                   />
                 </div>
                 <div className="text-zinc-700 px-5 py-4">
