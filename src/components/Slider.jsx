@@ -11,18 +11,13 @@ import Skeleton from "react-loading-skeleton";
 export const Slider = () => {
   const { data, loading } = useAsopebaidData();
   const [selectedMember, setSelectedMember] = useState(null);
-  console.log(data);
-
   const handleOpenModal = (miembro) => {
     setSelectedMember(miembro);
   };
-
   const handleCloseModal = () => {
     setSelectedMember(null);
   };
-
   const miembros = data.filter((item) => item.tipo === "miembro");
-
   return (
     <>
       <div className="relative">

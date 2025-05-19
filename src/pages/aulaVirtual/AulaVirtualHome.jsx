@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useAsopebaidData } from "../../hooks/useAsopebaidData";
 
 const AulaVirtualHome = () => {
+  const { data } = useAsopebaidData();
+  const videosAula = data.filter((item) => item.tipo === "videos-aulavirtual");
   const [selectedVideo, setSelectedVideo] = useState(null);
   return (
     <>
@@ -9,7 +12,7 @@ const AulaVirtualHome = () => {
 
         <div className="max-w-screen-xl mx-auto px-4 py-6 ">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 px-4">
-            {videos.map((video) => (
+            {videosAula.map((video) => (
               <div
                 key={video.id}
                 onClick={() => setSelectedVideo(video.url)}
@@ -18,13 +21,13 @@ const AulaVirtualHome = () => {
                 <div className="aspect-video relative bg-red-500">
                   <img
                     src={video.thumbnail}
-                    alt={video.title}
+                    alt={video.titulo}
                     className="object-cover w-full h-full"
                     loading="lazy"
                   />
                   <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/50 to-transparent px-4 py-3">
                     <p className="text-white text-base font-semibold">
-                      {video.title}
+                      {video.titulo}
                     </p>
                   </div>
                 </div>

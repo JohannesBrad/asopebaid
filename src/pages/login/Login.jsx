@@ -55,7 +55,7 @@ export const Login = () => {
         const data = await res.json();
         if (!res.ok) throw new Error(data.message || "Error en login");
 
-        console.log("Respuesta del servidor:", data);
+        //console.log("Respuesta del servidor:", data);
 
         if (data.status === "success") {
           const usuario = data.usuario;

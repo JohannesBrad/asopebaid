@@ -1,11 +1,8 @@
-import React from "react";
 import { useAsopebaidData } from "../hooks/useAsopebaidData";
 
 export const EventosNacionales = () => {
   const { data } = useAsopebaidData();
   const eventos = data.filter((item) => item.tipo === "evento-nacional");
-  console.log(eventos);
-
   return (
     <>
       <section className="py-8 pt-[10rem] md:pt-[12rem] text-center bg-zinc-100">

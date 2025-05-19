@@ -7,9 +7,11 @@ export const useAsopebaidData = () => {
 
   useEffect(() => {
     fetch("https://asopebaid.org.pe/data/asopebaidData.json")
+      //fetch("https://asopebaid.org.pe/asopebaidData.json")
+      // fetch("/data/asopebaidData.json")
       .then((res) => {
         if (!res.ok) {
-          throw new Error("No de cargo la dara");
+          throw new Error("No de cargo la data");
         }
         return res.json();
       })

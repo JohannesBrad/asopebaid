@@ -8,8 +8,6 @@ import { useAsopebaidData } from "../hooks/useAsopebaidData";
 
 export const Home = () => {
   const { data } = useAsopebaidData();
-  console.log(data);
-
   return (
     <>
       {/* Section 1 - Hero*/}
