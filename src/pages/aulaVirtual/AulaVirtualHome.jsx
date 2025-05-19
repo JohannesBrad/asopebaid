@@ -1,46 +1,5 @@
 import React, { useState } from "react";
 
-/* const videos = [
-  { id: 1, title: "Video 1", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-  { id: 2, title: "Video 2", url: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
-  { id: 3, title: "Video 3", url: "https://www.youtube.com/embed/tgbNymZ7vqY" },
-  { id: 4, title: "Video 4", url: "https://www.youtube.com/embed/kXYiU_JCYtU" },
-  { id: 5, title: "Video 5", url: "https://www.youtube.com/embed/e-ORhEE9VVg" },
-  { id: 6, title: "Video 6", url: "https://www.youtube.com/embed/l9PxOanFjxQ" },
-  { id: 7, title: "Video 7", url: "https://www.youtube.com/embed/2Vv-BfVoq4g" },
-  { id: 8, title: "Video 8", url: "https://www.youtube.com/embed/hLQl3WQQoQ0" },
-]; */
-
-const videos = [
-  {
-    id: 1,
-    title: "Clase 1: Introducción",
-    url: "https://asopebaid.org.pe/videos/Clase_1.mp4",
-    thumbnail: "https://asopebaid.org.pe/videos/thumbnails/clase1.jpg",
-    type: "mp4",
-  },
-  {
-    id: 2,
-    title: "Clase 2: Estrategias",
-    url: "https://asopebaid.org.pe/videos/Clase_3.mp4",
-    thumbnail: "https://asopebaid.org.pe/videos/thumbnails/clase3.jpg",
-    type: "mp4",
-  },
-  {
-    id: 3,
-    title: "Clase 3: Evaluación",
-    url: "https://asopebaid.org.pe/videos/Clase_4.mp4",
-    thumbnail: "https://asopebaid.org.pe/videos/thumbnails/clase4.jpg",
-    type: "mp4",
-  },
-  {
-    id: 4,
-    title: "Clase 4: Cierre",
-    url: "https://asopebaid.org.pe/videos/Clase_5.mp4",
-    thumbnail: "https://asopebaid.org.pe/videos/thumbnails/clase5.jpg",
-    type: "mp4",
-  },
-];
 const AulaVirtualHome = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   return (

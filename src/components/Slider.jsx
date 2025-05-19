@@ -79,7 +79,7 @@ export const Slider = () => {
                           {item.nombre}
                         </h2>
                         <p className="text-sm py-2 font-medium text-zinc-500">
-                          {item.socio}
+                          {item.codigo}
                         </p>
                         <p className="text-md py-2 font-light">
                           {item.descripcion.length > 0
