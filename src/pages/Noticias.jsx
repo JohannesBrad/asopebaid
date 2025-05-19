@@ -1,26 +1,9 @@
 import React from "react";
-import noticia1 from "../assets/noticia24-06-20-1.png";
-import noticia2 from "../assets/noticia24-06-20-2.png";
-const noticias = [
-  {
-    id: 1,
-    imagen: noticia1,
-    nombre: "Organización Mundial de Sanidad Animal (OiE)",
-    fecha: "Jun 24",
-    lugar: "Preguntas y respuestas sobre COVID-19",
-    descripcion: "",
-  },
-  {
-    id: 1,
-    imagen: noticia2,
-    nombre:
-      "Entrevista que destaca la importancia de la comunicación y el networking, que permitió a los científicos de Jackson Laboratory (JAX) prepararse para afrontar la necesidad de tener con prontitud un modelo de ratón que ayude a la investigación a encontrar soluciones oportunas.",
-    fecha: "Jun 24",
-    lugar: "Preguntas y respuestas sobre COVID-19",
-    descripcion: "",
-  },
-];
+import { useAsopebaidData } from "../hooks/useAsopebaidData";
+
 export const Noticias = () => {
+  const { data } = useAsopebaidData();
+  const noticias = data.filter((item) => item.tipo === "noticias");
   return (
     <>
       <>
@@ -41,11 +24,12 @@ export const Noticias = () => {
                     <img
                       src={item.imagen}
                       alt={item.nombre}
+                      loading="lazy"
                       className=" aspect-square rounded-t-xl  h-[20rem]  w-full"
                     />
                   </div>
                   <div className="text-zinc-700 px-5 py-4">
-                    <h2 className="text-xl font-semibold">{item.nombre}</h2>
+                    <h2 className="text-xl font-semibold">{item.titulo}</h2>
                     <p className="text-lg py-2 font-light">
                       {item.descripcion}
                     </p>
@@ -53,7 +37,15 @@ export const Noticias = () => {
                       <p className="text-lg py-2 font-medium text-[#1d4999]">
                         {item.fecha}
                       </p>
-                      <p className="text-md py-2 font-light">{item.lugar}</p>
+                      {/* <p className="text-md py-2 font-light">{item.lugar}</p> */}
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-md py-2 font-medium text-[#1d4999] border border-[#1d4999] rounded-sm p-3 hover:bg-[#1d4999] hover:text-white trastion-all mt-4 inline-block"
+                      >
+                        Leer más
+                      </a>
                     </div>
                   </div>
                 </article>

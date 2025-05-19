@@ -33,6 +33,7 @@ export const Home = () => {
             src={logoAsopebaid}
             alt="Asopebaid"
             className="w-3/4 md:w-[40%] mx-auto mb-4 max-w-xs"
+            loading="lazy"
           ></img>
         </div>
 
@@ -76,6 +77,7 @@ export const Home = () => {
               <img
                 src={imgMisionVision}
                 alt="img"
+                loading="lazy"
                 className="rounded-xl w-[80%] object-cover mb-4 "
               />
               <div className="border-b-2 border-[#1d4999]">
@@ -91,6 +93,7 @@ export const Home = () => {
               <img
                 src={imgObjetivos}
                 alt="img"
+                loading="lazy"
                 className="rounded-xl w-[80%] object-cover mb-4 "
               />
               <div className="border-b-2 border-[#1d4999]">

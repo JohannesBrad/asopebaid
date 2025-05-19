@@ -6,10 +6,12 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import { FreeMode, Pagination, Navigation } from "swiper/modules";
 import { useAsopebaidData } from "../hooks/useAsopebaidData";
+import Skeleton from "react-loading-skeleton";
 
 export const Slider = () => {
-  const { data } = useAsopebaidData();
+  const { data, loading } = useAsopebaidData();
   const [selectedMember, setSelectedMember] = useState(null);
+  console.log(data);
 
   const handleOpenModal = (miembro) => {
     setSelectedMember(miembro);
@@ -55,11 +57,22 @@ export const Slider = () => {
                   <article className="w-[22rem] max-w-sm h-[32rem] flex flex-col justify-between text-center py-10 rounded-xl px-4 shadow-sm bg-white">
                     <div>
                       <div className="flex justify-center mb-4">
-                        <img
+                        {loading ? (
+                          <Skeleton height={100} width={100} />
+                        ) : (
+                          <img
+                            src={item.imagen}
+                            alt={item.nombre}
+                            loading="lazy"
+                            className="w-40 h-40 rounded-full object-cover border-4 border-white"
+                          />
+                        )}
+                        {/*   <img
                           src={item.imagen}
                           alt={item.nombre}
+                          loading="lazy"
                           className="w-40 h-40 rounded-full object-cover border-4 border-white"
-                        />
+                        /> */}
                       </div>
                       <div className="text-zinc-700">
                         <h2 className="text-lg font-semibold pt-4">

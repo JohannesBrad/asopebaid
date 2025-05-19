@@ -1,18 +1,12 @@
 import React from "react";
-import eventoAsop1 from "../assets/ASOPEBAID-4.png";
-const eventosAsopebaid = [
-  {
-    id: 1,
-    imagen: eventoAsop1,
-    nombre:
-      "Ciclo de Conferencias:Uso de Animales durante la Pandemia del COVID-19",
-    fecha: "MAY - AGO 2022",
-    lugar: "ASOPEBAID, UPG-FMV, UNIV. RICARDO PALMA",
-    descripcion: "",
-  },
-];
+import { useAsopebaidData } from "../hooks/useAsopebaidData";
 
 export const EventosAsopebaid = () => {
+  const { data } = useAsopebaidData();
+  const eventosAsopebaid = data.filter(
+    (item) => item.tipo === "evento-asopebaid"
+  );
+
   return (
     <>
       <section className="py-8 pt-[10rem] md:pt-[12rem] text-center bg-zinc-100">
@@ -32,6 +26,7 @@ export const EventosAsopebaid = () => {
                   <img
                     src={evento.imagen}
                     alt={evento.nombre}
+                    loading="lazy"
                     className="bg-cover aspect-square rounded-t-xl  h-[20rem]  w-full"
                   />
                 </div>

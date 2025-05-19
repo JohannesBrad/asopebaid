@@ -35,7 +35,7 @@ const links = [
     name: "Únete a Nosotros",
     submenu: [
       { name: "Sé un miembro", path: "/unete-a-nosotros" },
-      { name: "Donaciones", path: "/unete#donaciones" },
+      //{ name: "Donaciones", path: "/unete#donaciones" },
     ],
   },
   { name: "Contacto", path: "/contacto" },

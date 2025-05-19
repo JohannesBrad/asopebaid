@@ -21,6 +21,8 @@ export const Directiva = () => {
                     <div className="flex justify-center mb-4">
                       <img
                         src={item.imagen}
+                        alt={item.nombre}
+                        loading="lazy"
                         className="w-40 h-40 rounded-full object-cover border-4 border-white"
                       />
                     </div>
