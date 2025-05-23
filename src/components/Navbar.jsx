@@ -29,6 +29,7 @@ const links = [
       { name: "Enlaces", path: "/enlaces" },
       { name: "Noticias", path: "/noticias" },
       { name: "Artículos", path: "/articulos" },
+      { name: "COVID-19", path: "/covid" },
     ],
   },
   {

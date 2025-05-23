@@ -1,5 +1,6 @@
 import React from "react";
 import { useAsopebaidData } from "../hooks/useAsopebaidData";
+import { PageTitle } from "../components/PageTitle";
 
 export const EventosAsopebaid = () => {
   const { data } = useAsopebaidData();
@@ -10,10 +11,7 @@ export const EventosAsopebaid = () => {
   return (
     <>
       <section className="py-8 pt-[10rem] md:pt-[12rem] text-center bg-zinc-100">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#1d4999] mb-6">
-          Eventos ASOPEBAID
-        </h2>
-
+        <PageTitle pageTitle={"Eventos ASOPEBAID"} />
         <div className="max-w-screen-xl mx-auto px-8 pb-20 pt-6 ">
           {/* <div className="flex flex-col justify-center gap-8 md:gap-12 md:flex-row"> */}
           <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center">

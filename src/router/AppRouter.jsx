@@ -23,6 +23,7 @@ import AulaVirtualLayout from "../layouts/AulaVirtualLayout";
 import AulaVirtualHome from "../pages/aulaVirtual/AulaVirtualHome";
 import Register from "../pages/login/Register";
 import ProtectedRouter from "../router/ProtectedRouter";
+import { Covid19 } from "../pages/Covid19";
 
 export const AppRouter = () => {
   return (
@@ -52,6 +53,7 @@ export const AppRouter = () => {
           <Route path="/enlaces" element={<Enlaces />}></Route>s
           <Route path="/noticias" element={<Noticias />}></Route>
           <Route path="/articulos" element={<Articulos />}></Route>
+          <Route path="/covid" element={<Covid19 />}></Route>
           <Route path="/unete-a-nosotros" element={<Unete />}></Route>
           <Route path="/contacto" element={<Contacto />}></Route>
           <Route path="*" element={<PageNotFound />} />

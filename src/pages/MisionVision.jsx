@@ -6,10 +6,7 @@ const MisionVision = () => {
     <section className="py-8 md:pt-[12rem] bg-[#f9fafb] ">
       <div className="min-h-screen   px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10 text-[#1d4999]">
-            Misión y Visión
-          </h2>
-
+          <PageTitle pageTitle={"Misión y Visión"} />
           {/* Misión */}
           <div className="bg-white shadow-md rounded-xl p-6 mb-8 flex flex-col sm:flex-row items-start gap-4">
             <div className="text-[#1d4999] text-4xl">
