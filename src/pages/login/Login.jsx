@@ -128,7 +128,9 @@ export const Login = () => {
             <span className="">¿No tienes cuenta?</span>
             <Link
               /* preventDefault */
-              to="/registro"
+              //to="/registro"
+              to="https://docs.google.com/forms/d/e/1FAIpQLSd7ltwtIKYMThdUCfhBexaNt54MMSPo8QWWutccS-IdXGcuGw/viewform"
+              target="_blank"
               className="text-blue-600 hover:text-blue-700"
             >
               Regístrate

@@ -3,11 +3,17 @@ import imgHeroHome from "../assets/img_bg_2.png"; // Importa la imagen desde el 
 import logoAsopebaid from "../assets/logo-asopebaid4.png";
 import imgMisionVision from "../assets/mision-vision.png"; // Importa la imagen desde el archivo contHeroHome.js
 import imgObjetivos from "../assets/objetivos.png"; // Importa la imagen desde el archivo contHeroHome.js
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useAsopebaidData } from "../hooks/useAsopebaidData";
 
 export const Home = () => {
   const { data } = useAsopebaidData();
+  const dataEvents = data
+    .filter((item) => {
+      return item.tipo === "evento-asopebaid";
+    })
+    .slice(0, 3);
+
   return (
     <>
       {/* Section 1 - Hero*/}
@@ -105,8 +111,47 @@ export const Home = () => {
           </div>
         </div>
       </section>
+      {/* Section -Eventos */}
+      <section className="py-8 md:py-8 text-center bg-[#f9fafb] mb-6">
+        <div className="max-w-screen-xl mx-auto px-8 pb-10 pt-6 ">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1d4999] mb-8">
+            Eventos
+          </h2>
+          <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center text-white">
+            {dataEvents.map((item) => {
+              return (
+                <article
+                  key={item.id}
+                  className="w-96 text-left rounded-xl overflow-hidden hover:scale-105 transition-all shadow-sm bg-white"
+                >
+                  <div className="relative w-full aspect-square bg-white rounded-t-xl overflow-hidden">
+                    <img
+                      src={item.imagen}
+                      alt={item.nombre}
+                      className="absolute inset-0 w-full h-full object-contain p-2"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <div className="px-5 py-2 bg-[#1d4999]">
+                    <h2 className="text-xl font-semibold">{item.nombre}</h2>
+                    <p className="text-lg py-2 font-light">
+                      {item.descripcion}
+                    </p>
+                    <div>
+                      <p className="text-lg py-2 font-medium">{item.fecha}</p>
+                      <p className="text-md py-2 font-light">{item.lugar}</p>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+        <NavLink to="/eventos-asopebaid">Ver mas evento</NavLink>
+      </section>
       {/* Section - Video */}
-      <section className="py-10 md:py-16 bg-zinc-100 text-center">
+      {/*       <section className="py-10 md:py-16 bg-zinc-100 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-[#1d4999] mb-8">
           Multimedia
         </h2>
@@ -121,7 +166,7 @@ export const Home = () => {
             ></iframe>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

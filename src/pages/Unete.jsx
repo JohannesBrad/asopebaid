@@ -36,7 +36,9 @@ export const Unete = () => {
             </div>
 
             <Link
-              to="/registro"
+              //to="/registro"
+              to="https://docs.google.com/forms/d/e/1FAIpQLSd7ltwtIKYMThdUCfhBexaNt54MMSPo8QWWutccS-IdXGcuGw/viewform"
+              target="_blank"
               className="inline-block bg-[#1d4999] hover:bg-[#153a7a] text-white font-semibold text-center py-3 px-6 rounded-lg shadow-md transition-all duration-300"
             >
               Completar formulario de membresía

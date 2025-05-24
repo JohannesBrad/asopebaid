@@ -62,11 +62,9 @@ export const AppRouter = () => {
 
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Register />} />
-
         {/*  <Route path="/aula-virtual" element={<AulaVirtualLayout />}>
           <Route path="/aula-virtual" element={<AulaVirtualHome />} />
         </Route> */}
-
         <Route
           path="/aula-virtual"
           element={
