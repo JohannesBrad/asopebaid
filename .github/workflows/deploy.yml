@@ -1,4 +1,4 @@
-name: Deploy Asopebaid a FTP
+name: Deploy Asopebaid to FTP
 
 on:
   push:
@@ -6,26 +6,29 @@ on:
       - main
 
 jobs:
-  deploy:
+  ftp-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: 📥 Clonar repositorio
         uses: actions/checkout@v3
 
-      - name: ⚙️ Instalar dependencias y compilar
+      - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - run: npm install
-      - run: npm run build
+      - name: 📦 Instalar dependencias
+        run: npm install
 
-      - name: 📤 Subir archivos por FTP
-        uses: AkhileshNS/ftp-deploy-action@v1.2.4
+      - name: 🛠️ Compilar el proyecto
+        run: npm run build
+
+      - name: 📤 Deploy a FTP con acción verificada
+        uses: sebastianpopp/ftp-action@v2
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
+          host: ${{ secrets.FTP_HOST }}
+          user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist
-          server-dir: /public_html
+          localDir: dist
+          remoteDir: /
