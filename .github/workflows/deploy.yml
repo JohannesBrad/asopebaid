@@ -13,22 +13,19 @@ jobs:
       - name: 📥 Clonar repositorio
         uses: actions/checkout@v3
 
-      - name: ⚙️ Usar Node.js
+      - name: ⚙️ Instalar dependencias y compilar
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: 18
 
-      - name: 📦 Instalar dependencias
-        run: npm install
+      - run: npm install
+      - run: npm run build
 
-      - name: 🛠️ Build del proyecto
-        run: npm run build
-
-      - name: 📤 Subir via FTP
-        uses: peaceiris/actions-ftp-deploy@v1
+      - name: 📤 Subir archivos por FTP
+        uses: AkhileshNS/ftp-deploy-action@v1.2.4
         with:
-          host: ${{ secrets.FTP_HOST }}
+          server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist
-          remote-dir: /public_html
+          server-dir: /public_html
