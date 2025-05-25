@@ -133,18 +133,20 @@ export const Home = () => {
                     />
                   </div>
 
-                  <div className="px-5 py-2 bg-[#1d4999]">
-                    <h2 className="text-xl font-semibold">{item.nombre}</h2>
+                  <div className="px-5 py-2 text-zinc-700">
+                    <h2 className="text-xl font-semibol d">{item.nombre}</h2>
                     <p className="text-lg py-2 font-light">
                       {item.descripcion}
                     </p>
                     <div>
-                      <p className="text-lg py-2 font-medium">{item.fecha}</p>
-                      <p className="text-md py-2 font-light">{item.lugar}</p>
+                      <p className="text-lg py-1 font-medium text-[#1d4999]">
+                        {item.fecha}
+                      </p>
+                      <p className="text-md py-1 font-light">{item.lugar}</p>
                       <a
                         href={item.link}
                         target="_blank"
-                        className="text-sm py-2 block font-medium hover:underline"
+                        className="text-sm text-gray-500 py-3 block font-medium hover:underline"
                       >
                         Leer más
                       </a>
