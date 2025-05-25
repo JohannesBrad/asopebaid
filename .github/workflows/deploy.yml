@@ -27,8 +27,8 @@ jobs:
       - name: 📤 Subir via FTP
         uses: SamKirkland/FTP-Deploy-Action@v3.1.0
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          ftp-server: ${{ secrets.FTP_HOST }}
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /public_html/
           local-dir: dist
