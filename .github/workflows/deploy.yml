@@ -25,10 +25,10 @@ jobs:
         run: npm run build
 
       - name: 📤 Subir via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v3.1.0
+        uses: peaceiris/actions-ftp-deploy@v1
         with:
-          ftp-server: ${{ secrets.FTP_HOST }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /public_html/
+          host: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist
+          remote-dir: /public_html
