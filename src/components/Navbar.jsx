@@ -4,6 +4,8 @@ import { FiChevronDown, FiMail } from "react-icons/fi";
 //import logoAsopebaid from "../assets/logoAsopebaid.svg"; // ajusta el path según tu proyecto
 import logoAsopebaid from "../assets/logo-asopebaid4.png";
 import { FaRegUser } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 const links = [
   { name: "Principal", path: "/" },
@@ -21,6 +23,7 @@ const links = [
       { name: "Nacionales", path: "/eventos-nacionales" },
       { name: "Internacionales", path: "/eventos-internacionales" },
       { name: "ASOPEBAID", path: "/eventos-asopebaid" },
+      { name: "Galeria", path: "/galeria" },
     ],
   },
   {
@@ -60,16 +63,35 @@ export const Navbar = () => {
 
   return (
     <div className="bg-white w-full shadow-md fixed z-10 transition duration-700 ease-out">
-      <div className="w-full bg-[#1d4999]">
-        <div className="max-w-7xl mx-auto py-2 justify-end flex px-4 md:px-0">
-          {/*     <span className="text-gray-300 font-light text-sm text-left ">
-            asopebaid.peru@gmail.com | <FiMail className="inline" />{" "}
-          </span> */}
+      <div className="w-full bg-[#1d4999] text-white text-sm">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-end items-start gap-2 md:gap-4">
+          {/* Redes sociales */}
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.facebook.com/profile.php?id=100065233221516&locale=es_LA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-200 transition"
+            >
+              <FaFacebookF size={18} />
+            </a>
+            <a
+              href="https://www.instagram.com/asopebaid?igsh=MWI2MTRrazdjcjV1MQ=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-200 transition"
+            >
+              <FaInstagram size={18} />
+            </a>
+          </div>
+
+          {/* Email */}
           <a
             href="mailto:asopebaid.peru@gmail.com"
-            className="text-gray-300 font-light text-sm"
+            className="flex items-center gap-2 hover:text-gray-200 transition"
           >
-            asopebaid.peru@gmail.com | <FiMail className="inline" />
+            <FiMail size={18} />
+            asopebaid.peru@gmail.com
           </a>
         </div>
       </div>

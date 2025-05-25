@@ -24,6 +24,7 @@ import AulaVirtualHome from "../pages/aulaVirtual/AulaVirtualHome";
 import Register from "../pages/login/Register";
 import ProtectedRouter from "../router/ProtectedRouter";
 import { Covid19 } from "../pages/Covid19";
+import Galery from "../pages/Galery";
 
 export const AppRouter = () => {
   return (
@@ -49,6 +50,7 @@ export const AppRouter = () => {
             path="/eventos-asopebaid"
             element={<EventosAsopebaid />}
           ></Route>
+          <Route path="/galeria" element={<Galery />}></Route>
           <Route path="/biblioteca" element={<Biblioteca />}></Route>
           <Route path="/enlaces" element={<Enlaces />}></Route>s
           <Route path="/noticias" element={<Noticias />}></Route>

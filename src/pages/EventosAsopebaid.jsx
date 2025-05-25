@@ -13,21 +13,21 @@ export const EventosAsopebaid = () => {
       <section className="py-8 pt-[10rem] md:pt-[12rem] text-center bg-zinc-100">
         <PageTitle pageTitle={"Eventos ASOPEBAID"} />
         <div className="max-w-screen-xl mx-auto px-8 pb-20 pt-6 ">
-          {/* <div className="flex flex-col justify-center gap-8 md:gap-12 md:flex-row"> */}
           <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center">
             {eventosAsopebaid.map((evento) => (
               <article
                 key={evento.id}
-                className="w-96 text-left rounded-xl hover:scale-105 transition-all shadow-sm bg-white"
+                className="w-96 text-left rounded-xl hover:scale-105 transition-all shadow-sm bg-white overflow-hidden"
               >
-                <div className="flex justify-center mb-4">
+                <div className="relative w-full aspect-[4/3] bg-white">
                   <img
                     src={evento.imagen}
                     alt={evento.nombre}
+                    className="absolute inset-0 w-full h-full object-contain p-2"
                     loading="lazy"
-                    className="bg-cover aspect-square rounded-t-xl  h-[20rem]  w-full"
                   />
                 </div>
+
                 <div className="text-zinc-700 px-5 py-4">
                   <h2 className="text-xl font-semibold">{evento.nombre}</h2>
                   <p className="text-lg py-2 font-light">

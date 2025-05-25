@@ -112,7 +112,7 @@ export const Home = () => {
         </div>
       </section>
       {/* Section -Eventos */}
-      <section className="py-8 md:py-8 text-center bg-[#f9fafb] mb-6">
+      <section className="py-8 md:py-8 text-center bg-[#f9fafb] pb-6">
         <div className="max-w-screen-xl mx-auto px-8 pb-10 pt-6 ">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1d4999] mb-8">
             Eventos
@@ -141,6 +141,13 @@ export const Home = () => {
                     <div>
                       <p className="text-lg py-2 font-medium">{item.fecha}</p>
                       <p className="text-md py-2 font-light">{item.lugar}</p>
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        className="text-sm py-2 block font-medium hover:underline"
+                      >
+                        Leer más
+                      </a>
                     </div>
                   </div>
                 </article>
@@ -148,7 +155,7 @@ export const Home = () => {
             })}
           </div>
         </div>
-        <NavLink to="/eventos-asopebaid">Ver mas evento</NavLink>
+        <NavLink to="/eventos-asopebaid">Ver más evento</NavLink>
       </section>
       {/* Section - Video */}
       {/*       <section className="py-10 md:py-16 bg-zinc-100 text-center">
