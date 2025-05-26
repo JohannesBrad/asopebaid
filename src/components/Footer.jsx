@@ -10,9 +10,9 @@ export const Footer = () => {
           {/* Columna 1 - Info */}
           <div className="md:w-1/2">
             <h3 className="font-bold text-2xl text-white">Asopebaid</h3>
-            <p className="text-sm mt-2 max-w-md leading-relaxed">
-              Asociación de Padres de Familia de la Escuela de Educación
-              Especial "Braulio Muñoz Cabrera"
+            <p className="text-sm mt-2 max-w-sm leading-relaxed">
+              Asociación para el empleo y bienestar de animales en investigación
+              y docencia.
             </p>
           </div>
 
