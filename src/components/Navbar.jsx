@@ -6,6 +6,8 @@ import logoAsopebaid from "../assets/logo-asopebaid4.png";
 import { FaRegUser } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { LuLaptop } from "react-icons/lu";
+import imgLap from "../assets/imgLaptop.jpeg";
 
 const links = [
   { name: "Principal", path: "/" },
@@ -144,14 +146,32 @@ export const Navbar = () => {
             ))}
           </nav>
           <div>
-            <Link
-              to="/login"
-              onClick={() => handleMobileLinkClick(link.path)}
-              className="hidden md:flex items-center bg-[#1d4999] text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300"
-            >
-              <FaRegUser />
-              <span className="ml-2">Iniciar sesión</span>
-            </Link>
+            <div className="space-y-1">
+              <div
+                className="hidden md:flex items-center justify-center bg-cover bg-center rounded-lg shadow-lg aspect-auto"
+                style={{ backgroundImage: `url(${imgLap})` }}
+              >
+                <Link
+                  to="https://forms.gle/wNk59Po3b7HEpmBj8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-800/70 hover:bg-[#153a7a]/80 text-white px-6 py-2 rounded-md text-sm flex items-center transition duration-300 shadow-md"
+                >
+                  <LuLaptop size={18} />
+                  <span className="ml-2 font-normal tracking-wide uppercase">
+                    CURSOS ASOPEBAID
+                  </span>
+                </Link>
+              </div>
+              <Link
+                to="/login"
+                onClick={() => handleMobileLinkClick(link.path)}
+                className="hidden md:flex items-center justify-center bg-[#1d4999] text-white px-5 py-2 rounded-md hover:bg-blue-700 transition duration-300"
+              >
+                <FaRegUser />
+                <span className="ml-2">Iniciar sesión</span>
+              </Link>
+            </div>
           </div>
 
           {/* Mobile hamburger */}

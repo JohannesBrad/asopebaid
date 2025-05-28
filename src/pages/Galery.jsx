@@ -83,7 +83,7 @@ const Galery = () => {
           onClick={() => setModalIndex(null)}
         >
           <div
-            className="relative max-w-5xl w-full"
+            className="relative max-w-6xl w-full"
             onClick={(e) => e.stopPropagation()}
           >
             {/* BOTÓN CERRAR */}
