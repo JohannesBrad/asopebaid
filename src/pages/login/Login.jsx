@@ -129,7 +129,7 @@ export const Login = () => {
             <Link
               /* preventDefault */
               //to="/registro"
-              to="https://docs.google.com/forms/d/e/1FAIpQLSd7ltwtIKYMThdUCfhBexaNt54MMSPo8QWWutccS-IdXGcuGw/viewform"
+              to="https://forms.gle/wNk59Po3b7HEpmBj8"
               target="_blank"
               className="text-blue-600 hover:text-blue-700"
             >

@@ -1,5 +1,6 @@
 import React from "react";
 import { FaListUl } from "react-icons/fa";
+import { PageTitle } from "../components/PageTitle";
 
 export const Objetivos = () => {
   return (
