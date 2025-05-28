@@ -1,5 +1,6 @@
 import React from "react";
 import { FaBullseye, FaEye } from "react-icons/fa";
+import { PageTitle } from "../components/PageTitle";
 
 const MisionVision = () => {
   return (
