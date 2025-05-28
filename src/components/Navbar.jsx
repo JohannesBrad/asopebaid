@@ -166,7 +166,7 @@ export const Navbar = () => {
               <Link
                 to="/login"
                 onClick={() => handleMobileLinkClick(link.path)}
-                className="hidden md:flex items-center justify-center bg-[#1d4999] text-white px-5 py-2 rounded-md hover:bg-blue-700 transition duration-300"
+                className="hidden md:flex items-center justify-center bg-[#1d4999] text-white px-5 md:py-2 rounded-md hover:bg-blue-700 transition duration-300"
               >
                 <FaRegUser />
                 <span className="ml-2">Iniciar sesión</span>
@@ -243,14 +243,34 @@ export const Navbar = () => {
                 )}
               </div>
             ))}
-            <div className="px-4 pt-2 mb-4">
-              <Link
-                to="/login"
-                className="flex items-center justify-center gap-2 w-full bg-[#1d4999] text-white font-medium text-sm py-3 rounded-lg shadow-sm hover:bg-[#153a7a] transition-all duration-300"
-              >
-                <FaRegUser className="text-base" />
-                Iniciar sesión
-              </Link>
+            <div>
+              <div className="px-4">
+                <div
+                  className="md:hidden flex items-center justify-center bg-cover bg-center rounded-lg shadow-lg aspect-auto"
+                  style={{ backgroundImage: `url(${imgLap})` }}
+                >
+                  <Link
+                    to="https://forms.gle/wNk59Po3b7HEpmBj8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full justify-center bg-gray-800/70 hover:bg-[#153a7a]/80 text-white px-6 py-3 rounded-md text-sm flex items-center transition duration-300 shadow-md"
+                  >
+                    <LuLaptop size={18} />
+                    <span className="ml-2 font-normal tracking-wide uppercase">
+                      CURSOS ASOPEBAID
+                    </span>
+                  </Link>
+                </div>
+              </div>
+              <div className="px-4 pt-2 mb-4">
+                <Link
+                  to="/login"
+                  className="flex items-center justify-center gap-2 w-full bg-[#1d4999] text-white font-medium text-sm py-3 rounded-lg shadow-sm hover:bg-[#153a7a] transition-all duration-300"
+                >
+                  <FaRegUser className="text-base" />
+                  Iniciar sesión
+                </Link>
+              </div>
             </div>
           </div>
         )}
