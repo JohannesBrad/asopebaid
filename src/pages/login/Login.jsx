@@ -128,8 +128,8 @@ export const Login = () => {
             <span className="">¿No tienes cuenta?</span>
             <Link
               /* preventDefault */
-              //to="/registro"
-              to="https://forms.gle/wNk59Po3b7HEpmBj8"
+              to="/registro"
+              // to="https://forms.gle/wNk59Po3b7HEpmBj8"
               target="_blank"
               className="text-blue-600 hover:text-blue-700"
             >

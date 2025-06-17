@@ -5,6 +5,7 @@ const Register = () => {
   const [nombre, setNombre] = useState("");
   const [correo, setCorreo] = useState("");
   const [telefono, setTelefono] = useState("");
+  const [dni, setDni] = useState("");
   const [password, setPassword] = useState("");
   const [formError, setFormError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -46,7 +47,7 @@ const Register = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         //body: JSON.stringify({ nombre, email, telefono, password }),
-        body: JSON.stringify({ nombre, correo, telefono, password }),
+        body: JSON.stringify({ nombre, correo, telefono, dni, password }),
       });
 
       const text = await res.text();
@@ -67,6 +68,7 @@ const Register = () => {
       setCorreo("");
 
       //setEmail("");
+      setDni("");
       setTelefono("");
       setPassword("");
 
@@ -105,6 +107,18 @@ const Register = () => {
               placeholder=""
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
+              required
+            />
+            {/*   {emailError && <p className="text-red-500 text-xs">{emailError}</p>} */}
+          </div>
+          <div className="flex flex-col gap-2 mb-4">
+            <label>DNI</label>
+            <input
+              type="text"
+              className="bg-zinc-100 text-sm border-blue-200 rounded-md p-2"
+              placeholder=""
+              value={dni}
+              onChange={(e) => setDni(e.target.value)}
               required
             />
             {/*   {emailError && <p className="text-red-500 text-xs">{emailError}</p>} */}
