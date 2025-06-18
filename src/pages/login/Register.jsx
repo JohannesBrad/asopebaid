@@ -169,7 +169,7 @@ const Register = () => {
               type="submit"
               className="bg-blue-600 hover:bg-blue-700 text-white rounded-md p-2"
             >
-              Resitrarse
+              Registrarse
             </button>
             {/*      {formError && (
               <p className="text-red-500 text-xs text-center">{formError}</p>
